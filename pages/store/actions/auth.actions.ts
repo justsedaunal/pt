@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { AuthService } from "../../api/services/auth.service";
 import { AuthReduxModel } from "../models/auth-redux.model";
 
@@ -51,3 +52,17 @@ export const RegisterFunc = (value: any) => (dispatch: any) => {
         }
     });
 };
+=======
+import { AuthReduxModel } from "../models/auth-redux.model";
+
+export const AUTH = "AUTH";
+const setTokenLocal = (value: AuthReduxModel) => (dispatch: any) => {
+  return dispatch({
+    type: AUTH,
+    payload: value,
+  });
+};
+export const SetAuth = (value: AuthReduxModel) => (dispatch: any) => {
+  dispatch(setTokenLocal(value));
+};
+>>>>>>> 46e4a417636404535a07f3715f9c2da3eaf4ebb1
