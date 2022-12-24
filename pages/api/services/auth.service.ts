@@ -7,7 +7,7 @@ export class AuthService extends BaseApiService {
     async login(value: any) {
         return (await this.baseAxios.post("user/login", value)).data;
     }
-    async productList(value: any) {
-        return (await this.baseAxios.get("user/login", value)).data;
+    async productList() {
+        return (await this.baseAxios.get("product/all"));
     }
 }

@@ -59,3 +59,31 @@ export const QuickFunc = () => (dispatch: any) => {
     localStorage.removeItem("fullName");
     dispatch(SetAuth({ token: "", fullname: "" }) as any);
 };
+
+export const productListFunc = (value: any) => (dispatch: any) => {
+    _authService
+        .login({
+            email: value.email,
+            password: value.password,
+        })
+        .then((response) => {
+            if (response.token != "") {
+                if (value.beniHatırla) {
+                    localStorage.setItem("token", response.token);
+                    localStorage.setItem("fullName", value.email);
+                    sessionStorage.removeItem("token");
+                    sessionStorage.removeItem("fullName");
+                } else {
+                    sessionStorage.setItem("token", response.token);
+                    sessionStorage.setItem("fullName", value.email);
+                    localStorage.removeItem("token");
+                    localStorage.removeItem("fullName");
+                }
+                dispatch(
+                    SetAuth({ token: response.token, fullname: value.email }) as any
+                );
+            } else {
+                alert("Kullanıcı Bilgileri Hatalı");
+            }
+        });
+};

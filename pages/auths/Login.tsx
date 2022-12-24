@@ -160,7 +160,7 @@ export default function Login() {
                     type="submit"
                     className="btn bg-grad text-white rounded-pill w-100"
                   >
-                    Register
+                    Login
                   </button>
                   <a
                     onClick={() => onClickFormType()}
@@ -284,13 +284,13 @@ export default function Login() {
                       className="btn bg-grad text-white rounded-pill"
                       type="submit"
                     >
-                      Register
+                      Sign In
                     </button>
                     <a
                       onClick={() => onClickFormType()}
                       className="btn bg-grad text-white rounded-pill"
                     >
-                      Hesabım var
+                      Login{" "}
                     </a>
                   </div>
                 </form>

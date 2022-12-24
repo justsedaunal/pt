@@ -1,9 +1,14 @@
-import React from 'react'
+import React from "react";
+import Navbar from "../components/Navbar";
+import Products from "./products/Products";
 
 const Mainlayout = () => {
   return (
-    <div>main_layout</div>
-  )
-}
+    <>
+      <Navbar />
+      <Products />;
+    </>
+  );
+};
 
-export default Mainlayout
+export default Mainlayout;
