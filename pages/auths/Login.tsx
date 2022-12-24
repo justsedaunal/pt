@@ -85,193 +85,218 @@ export default function Login() {
   });
   return (
     <>
-
-      
-
       <div className="row">
         {submitted ? <h4 className="text-success">{message}</h4> : <></>}
       </div>
       {formType == "login" ? (
         <>
-          <div className="row ">
-            <div className="col-8 bg-dark"></div>
-            <div className="col-4  bg-dark ">
-              <form className="w-50" onSubmit={loginForm.handleSubmit}>
-                <div className="mb-3">
-                  <label htmlFor="name" className="form-label">
-                    Email
-                  </label>
-                  <input
-                    type="email"
-                    name="email"
-                    className="form-control"
-                    placeholder="example@mail.com"
-                    value={loginForm.values.email}
-                    onChange={loginForm.handleChange}
-                    onBlur={loginForm.handleBlur}
-                  />
-                  {loginForm.errors.email && (
-                    <div className="text-danger">{loginForm.errors.email}</div>
-                  )}
+          <div className="container-fluid  height">
+            <div className="row height ">
+              <div className="bg-grad col-7 d-flex flex-column align-items-start justify-content-center">
+                <h1 className="text-white">PitonShop</h1>
+                <p className="text-white">The most popular book shop for IT</p>
+              </div>
+              <div className="col-5 d-flex flex-column align-items-center justify-content-center">
+                <div>
+                  <h2 className="text-dark">Hello!</h2>
+                  <p className="text-dark">Sign Up To Get Started</p>
                 </div>
+                <form className="w-50" onSubmit={loginForm.handleSubmit}>
+                  <div className="mb-3">
+                    <input
+                      type="email"
+                      name="email"
+                      className="form-control rounded-pill"
+                      placeholder="Email Address"
+                      value={loginForm.values.email}
+                      onChange={loginForm.handleChange}
+                      onBlur={loginForm.handleBlur}
+                    />
+                    {loginForm.errors.email && (
+                      <div className="text-danger">
+                        {loginForm.errors.email}
+                      </div>
+                    )}
+                  </div>
 
-                <div className="mb-3">
-                  <label htmlFor="name" className="form-label">
-                    Password
-                  </label>
-                  <input
-                    type="password"
-                    name="password"
-                    className="form-control"
-                    placeholder=""
-                    value={loginForm.values.password}
-                    onChange={loginForm.handleChange}
-                    onBlur={loginForm.handleBlur}
-                  />
-                  {loginForm.errors.password && (
-                    <div className="text-danger">
-                      {loginForm.errors.password}
-                    </div>
-                  )}
-                </div>
-                <div className="mb-3">
-                  <label htmlFor="name" className="form-label">
-                    Beni Hatırla
-                  </label>
-                  <input
-                    className="form-check-input"
-                    type="checkbox"
-                    onChange={() =>
-                      loginForm.setValues({
-                        ...loginForm.values,
-                        beniHatırla: !loginForm.values.beniHatırla,
-                      })
-                    }
-                    id="beniHatırla"
-                    checked={loginForm.values.beniHatırla}
-                  />
-                </div>
-                <button className="btn btn-info mr-1" type="submit">
-                  Login
-                </button>
-                <a onClick={() => onClickFormType()} className="btn btn-link">
-                  Hesabım Yok
-                </a>
-              </form>
+                  <div className="mb-3">
+                    <input
+                      type="password"
+                      name="password"
+                      className="form-control rounded-pill"
+                      placeholder="Password"
+                      value={loginForm.values.password}
+                      onChange={loginForm.handleChange}
+                      onBlur={loginForm.handleBlur}
+                    />
+                    {loginForm.errors.password && (
+                      <div className="text-danger">
+                        {loginForm.errors.password}
+                      </div>
+                    )}
+                  </div>
+
+                  <div className="mb-3  form-check">
+                    <label
+                      className="form-check-label text-dark"
+                      htmlFor="name"
+                    >
+                      Remember Me!
+                    </label>
+                    <input
+                      className="form-check-input rounded-pill"
+                      type="checkbox"
+                      onChange={() =>
+                        loginForm.setValues({
+                          ...loginForm.values,
+                          beniHatırla: !loginForm.values.beniHatırla,
+                        })
+                      }
+                      id="beniHatırla"
+                      checked={loginForm.values.beniHatırla}
+                    />
+                  </div>
+                  <button
+                    type="submit"
+                    className="btn bg-grad text-white rounded-pill w-100"
+                  >
+                    Register
+                  </button>
+                  <a
+                    onClick={() => onClickFormType()}
+                    className="btn bg-grad text-white rounded-pill w-100 mt-3"
+                  >
+                    Sign In
+                  </a>
+                </form>
+              </div>
             </div>
           </div>
         </>
       ) : (
-        <> <div class="container h-100 d-flex flex-column">
-          <div className="row">
-            <div className="col-12 col-md-1"></div>
-            <div className="col-12 col-md-10">
-              <form className="w-50" onSubmit={registerForm.handleSubmit}>
-                <div className="mb-3">
-                  <label htmlFor="name" className="form-label">
-                    Email
-                  </label>
-                  <input
-                    type="email"
-                    name="email"
-                    className="form-control"
-                    placeholder="example@mail.com"
-                    value={registerForm.values.email}
-                    onChange={registerForm.handleChange}
-                    onBlur={registerForm.handleBlur}
-                  />
-                  {registerForm.errors.email && (
-                    <div className="text-danger">
-                      {registerForm.errors.email}
-                    </div>
-                  )}
-                </div>
-                <div className="mb-3">
-                  <label htmlFor="name" className="form-label">
-                    Name
-                  </label>
-                  <input
-                    type="text"
-                    name="name"
-                    className="form-control"
-                    placeholder="example"
-                    value={registerForm.values.name}
-                    onChange={registerForm.handleChange}
-                    onBlur={registerForm.handleBlur}
-                  />
-                  {registerForm.errors.name && (
-                    <div className="text-danger">
-                      {registerForm.errors.name}
-                    </div>
-                  )}
-                </div>
-                <div className="mb-3">
-                  <label htmlFor="name" className="form-label">
-                    Password
-                  </label>
-                  <input
-                    type="password"
-                    name="password"
-                    className="form-control"
-                    placeholder=""
-                    value={registerForm.values.password}
-                    onChange={registerForm.handleChange}
-                    onBlur={registerForm.handleBlur}
-                  />
-                  {registerForm.errors.password && (
-                    <div className="text-danger">
-                      {registerForm.errors.password}
-                    </div>
-                  )}
-                </div>
-                <div className="mb-3">
-                  <label htmlFor="name" className="form-label">
-                    Password Confirmation
-                  </label>
-                  <input
-                    type="password"
-                    name="passwordConfirmation"
-                    className="form-control"
-                    placeholder=""
-                    value={registerForm.values.passwordConfirmation}
-                    onChange={registerForm.handleChange}
-                    onBlur={registerForm.handleBlur}
-                  />
-                  {registerForm.errors.passwordConfirmation && (
-                    <div className="text-danger">
-                      {registerForm.errors.passwordConfirmation}
-                    </div>
-                  )}
-                </div>
-                <div className="mb-3">
-                  <label htmlFor="name" className="form-label">
-                    Phone
-                  </label>
-                  <input
-                    type="number"
-                    name="phone"
-                    className="form-control"
-                    placeholder=""
-                    value={registerForm.values.phone}
-                    onChange={registerForm.handleChange}
-                    onBlur={registerForm.handleBlur}
-                  />
-                  {registerForm.errors.phone && (
-                    <div className="text-danger">
-                      {registerForm.errors.phone}
-                    </div>
-                  )}
-                </div>
-                <button className="btn btn-info" type="submit">
-                  Register
-                </button>
-                <a onClick={() => onClickFormType()} className="btn btn-link">
-                  Hesabım var
-                </a>
-              </form>
+        <>
+          {" "}
+          <div className="container-fluid  height">
+            <div className="row height">
+              <div className="bg-grad col-7 d-flex flex-column align-items-start justify-content-center">
+                <h1 className="text-white">PitonShop</h1>
+                <p className="text-white">The most popular book shop for IT</p>
+              </div>
+              <div className="col-5 d-flex flex-column align-items-center justify-content-center height">
+                <form className="w-50" onSubmit={registerForm.handleSubmit}>
+                  <div className="mb-3">
+                    <label htmlFor="name" className="form-label">
+                      Email
+                    </label>
+                    <input
+                      type="email"
+                      name="email"
+                      className="form-control"
+                      placeholder="example@mail.com"
+                      value={registerForm.values.email}
+                      onChange={registerForm.handleChange}
+                      onBlur={registerForm.handleBlur}
+                    />
+                    {registerForm.errors.email && (
+                      <div className="text-danger">
+                        {registerForm.errors.email}
+                      </div>
+                    )}
+                  </div>
+                  <div className="mb-3">
+                    <label htmlFor="name" className="form-label">
+                      Name
+                    </label>
+                    <input
+                      type="text"
+                      name="name"
+                      className="form-control"
+                      placeholder="example"
+                      value={registerForm.values.name}
+                      onChange={registerForm.handleChange}
+                      onBlur={registerForm.handleBlur}
+                    />
+                    {registerForm.errors.name && (
+                      <div className="text-danger">
+                        {registerForm.errors.name}
+                      </div>
+                    )}
+                  </div>
+                  <div className="mb-3">
+                    <label htmlFor="name" className="form-label">
+                      Password
+                    </label>
+                    <input
+                      type="password"
+                      name="password"
+                      className="form-control"
+                      placeholder=""
+                      value={registerForm.values.password}
+                      onChange={registerForm.handleChange}
+                      onBlur={registerForm.handleBlur}
+                    />
+                    {registerForm.errors.password && (
+                      <div className="text-danger">
+                        {registerForm.errors.password}
+                      </div>
+                    )}
+                  </div>
+                  <div className="mb-3">
+                    <label htmlFor="name" className="form-label">
+                      Password Confirmation
+                    </label>
+                    <input
+                      type="password"
+                      name="passwordConfirmation"
+                      className="form-control"
+                      placeholder=""
+                      value={registerForm.values.passwordConfirmation}
+                      onChange={registerForm.handleChange}
+                      onBlur={registerForm.handleBlur}
+                    />
+                    {registerForm.errors.passwordConfirmation && (
+                      <div className="text-danger">
+                        {registerForm.errors.passwordConfirmation}
+                      </div>
+                    )}
+                  </div>
+                  <div className="mb-3">
+                    <label htmlFor="name" className="form-label">
+                      Phone
+                    </label>
+                    <input
+                      type="number"
+                      name="phone"
+                      className="form-control"
+                      placeholder=""
+                      value={registerForm.values.phone}
+                      onChange={registerForm.handleChange}
+                      onBlur={registerForm.handleBlur}
+                    />
+                    {registerForm.errors.phone && (
+                      <div className="text-danger">
+                        {registerForm.errors.phone}
+                      </div>
+                    )}
+                  </div>
+                  <div className="d-flex justify-content-between">
+                    <button
+                      className="btn bg-grad text-white rounded-pill"
+                      type="submit"
+                    >
+                      Register
+                    </button>
+                    <a
+                      onClick={() => onClickFormType()}
+                      className="btn bg-grad text-white rounded-pill"
+                    >
+                      Hesabım var
+                    </a>
+                  </div>
+                </form>
+              </div>
+              <div className="col-12 col-md-1"></div>
             </div>
-            <div className="col-12 col-md-1"></div>
-          </div>
           </div>
         </>
       )}

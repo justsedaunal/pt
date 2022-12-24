@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+import { useRouter } from "next/router";
 import { AuthService } from "../../api/services/auth.service";
 import { AuthReduxModel } from "../models/auth-redux.model";
 
@@ -12,6 +12,18 @@ const setTokenLocal = (value: AuthReduxModel) => (dispatch: any) => {
 };
 export const SetAuth = (value: AuthReduxModel) => (dispatch: any) => {
     dispatch(setTokenLocal(value));
+};
+
+
+export const RegisterFunc = (value: any) => (dispatch: any) => {
+    _authService.register(value).then((response) => {
+        if (response.token != "") {
+            sessionStorage.setItem("token", response.token);
+            sessionStorage.setItem("fullName", value.name);
+            dispatch(SetAuth({ token: response.token, fullname: value.name }) as any);
+            //  window.location.href="/Deneme"
+        }
+    });
 };
 export const LoginFunc = (value: any) => (dispatch: any) => {
     _authService
@@ -40,29 +52,10 @@ export const LoginFunc = (value: any) => (dispatch: any) => {
             }
         });
 };
-
-
-export const RegisterFunc = (value: any) => (dispatch: any) => {
-    _authService.register(value).then((response) => {
-        if (response.token != "") {
-            sessionStorage.setItem("token", response.token);
-            sessionStorage.setItem("fullName", value.name);
-            dispatch(SetAuth({ token: response.token, fullname: value.name }) as any);
-            //  window.location.href="/Deneme"
-        }
-    });
+export const QuickFunc = () => (dispatch: any) => {
+    sessionStorage.removeItem("token");
+    sessionStorage.removeItem("fullName");
+    localStorage.removeItem("token");
+    localStorage.removeItem("fullName");
+    dispatch(SetAuth({ token: "", fullname: "" }) as any);
 };
-=======
-import { AuthReduxModel } from "../models/auth-redux.model";
-
-export const AUTH = "AUTH";
-const setTokenLocal = (value: AuthReduxModel) => (dispatch: any) => {
-  return dispatch({
-    type: AUTH,
-    payload: value,
-  });
-};
-export const SetAuth = (value: AuthReduxModel) => (dispatch: any) => {
-  dispatch(setTokenLocal(value));
-};
->>>>>>> 46e4a417636404535a07f3715f9c2da3eaf4ebb1

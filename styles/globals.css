@@ -2,12 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+.height {
+  height: 100vh;
+}
+
 :root {
   --max-width: 1100px;
   --border-radius: 12px;
-  --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
-    'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
-    'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
+  --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
+    "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
+    "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
 
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -113,13 +123,25 @@ a {
 .bg-grad {
   background: hsla(228, 95%, 22%, 1);
 
-background: linear-gradient(45deg, hsla(228, 95%, 22%, 1) 1%, hsla(210, 98%, 45%, 1) 100%);
+  background: linear-gradient(
+    45deg,
+    hsla(228, 95%, 22%, 1) 1%,
+    hsla(210, 98%, 45%, 1) 100%
+  );
 
-background: -moz-linear-gradient(45deg, hsla(228, 95%, 22%, 1) 1%, hsla(210, 98%, 45%, 1) 100%);
+  background: -moz-linear-gradient(
+    45deg,
+    hsla(228, 95%, 22%, 1) 1%,
+    hsla(210, 98%, 45%, 1) 100%
+  );
 
-background: -webkit-linear-gradient(45deg, hsla(228, 95%, 22%, 1) 1%, hsla(210, 98%, 45%, 1) 100%);
+  background: -webkit-linear-gradient(
+    45deg,
+    hsla(228, 95%, 22%, 1) 1%,
+    hsla(210, 98%, 45%, 1) 100%
+  );
 
-filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#03186C", endColorstr="#0275E6", GradientType=1 );
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#03186C", endColorstr="#0275E6", GradientType=1 );
 }
 
 .bg-btn {
