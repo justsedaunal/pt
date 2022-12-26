@@ -5,6 +5,7 @@ import { useDispatch } from "react-redux";
 import { LoginFunc, RegisterFunc } from "../store/actions/auth.actions";
 
 import { useState } from "react";
+import InputMask from 'react-input-mask';
 
 import { useFormik } from "formik";
 import * as yup from "yup";
@@ -264,21 +265,21 @@ export default function Login() {
                     <label htmlFor="name" className="form-label">
                       Phone
                     </label>
-                    <input
-                      type="number"
-                      name="phone"
-                      className="form-control"
-                      placeholder=""
-                      value={registerForm.values.phone}
-                      onChange={registerForm.handleChange}
-                      onBlur={registerForm.handleBlur}
-                    />
+                    <InputMask 
+                 className="form-control"
+                  name="phone"
+      mask='+90(999) 999 9999' 
+      
+      value={registerForm.values.phone} 
+      onChange={registerForm.handleChange}>
+    </InputMask>
                     {registerForm.errors.phone && (
                       <div className="text-danger">
                         {registerForm.errors.phone}
                       </div>
                     )}
                   </div>
+                  
                   <div className="d-flex justify-content-between">
                     <button
                       className="btn bg-grad text-white rounded-pill"

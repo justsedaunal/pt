@@ -9,13 +9,13 @@ import { useDispatch } from "react-redux";
 import { SetAuth } from "./store/actions/auth.actions";
 const inter = Inter({ subsets: ["latin"] });
 
-export default function Home() {
+export default function Home({ children }: any) {
   const dispatch = useDispatch();
   const authR = useSelector<RootState>((state) => state.authReducer) as any;
   useEffect(() => {
     authControl();
     return () => {};
-  }, []);
+  }, [dispatch]);
   function authControl() {
     var token = "";
     var fullName = "";
@@ -39,6 +39,11 @@ export default function Home() {
         token: token,
       }) as any
     );
+    
   }
-  return <>{authR.auth.token == "" ? <Login /> : <Mainlayout />}</>;
+  return (
+    <>
+      {authR.auth.token == "" ? <Login /> : <Mainlayout>{children}</Mainlayout>}
+    </>
+  );
 }

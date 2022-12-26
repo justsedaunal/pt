@@ -13,6 +13,7 @@ export const AuthReducer = (
     case AUTH:
       return {
         auth: action.payload,
+        isLoggedIn: false,
       };
 
     default:
