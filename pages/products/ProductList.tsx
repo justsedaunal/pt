@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Action, LikeFunc, UnLikeFunc } from "../store/actions/product.actions";
+import { Action, LikeFunc, UnLikeFunc } from "../../store/actions/product.actions";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import { faHeart as faHeartR } from "@fortawesome/free-regular-svg-icons";
@@ -23,7 +23,7 @@ export default function ProductList() {
         <div className="row gap-4 justify-content-center flex-wrap">
           {productSelector.products.map((x: any) => (
             <div key={x.id} className="card col-3 ">
-              <Image src={imgUrl + x.image} className="card-img-top" alt="..." />
+              <Image width={200}  height={500} src={imgUrl + x.image} className="card-img-top" alt="..." />
               <div className="card-body">
                 <h5 className="card-title">{x.name}</h5>
                 <p className="card-text">{x.price} $</p>

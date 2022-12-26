@@ -55,6 +55,7 @@ const ProductDetail = () => {
             <div className="row gap-4 justify-content-center flex-wrap">
               <div className="card col-12 flex-row  card-height">
                 <Image
+                   width={200}  height={500}
                   src={imgUrl + product.image}
                   className="card-img-top rounded img-width"
                   alt="..."

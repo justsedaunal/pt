@@ -1,4 +1,4 @@
-import { PRODUCT_DETAIL } from './../actions/product.actions';
+import { PRODUCT_DETAIL } from '../actions/product.actions';
 import { ActionPayload } from "../action.payload";
 import { PRODUCTS } from "../actions/product.actions";
 

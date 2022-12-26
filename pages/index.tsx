@@ -1,12 +1,12 @@
 import { Inter } from "@next/font/google";
 import Login from "./auths/Login";
 import { useSelector } from "react-redux";
-import { RootState } from "./store/root-reducers";
+import { RootState } from "../store/root-reducers";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Mainlayout from "./main_layout";
 import { useCallback, useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { SetAuth } from "./store/actions/auth.actions";
+import { SetAuth } from "../store/actions/auth.actions";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home({ children }: any) {

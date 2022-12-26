@@ -2,7 +2,7 @@ import Head from "next/head";
 import React from "react";
 import Layout from "../../layout/layout";
 import { useDispatch } from "react-redux";
-import { LoginFunc, RegisterFunc } from "../store/actions/auth.actions";
+import { LoginFunc, RegisterFunc } from "../../store/actions/auth.actions";
 
 import { useState } from "react";
 import InputMask from 'react-input-mask';

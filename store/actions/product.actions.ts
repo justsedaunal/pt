@@ -1,4 +1,4 @@
-import { ProductService } from "../../api/services/product.service";
+import { ProductService } from "../../pages/api/services/product.service";
 import { ProductReduxModel } from "../models/product-redux.model";
 
 const _productService = new ProductService();

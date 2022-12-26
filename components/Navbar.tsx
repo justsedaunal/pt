@@ -1,4 +1,4 @@
-import { logout } from "../pages/store/actions/auth.actions";
+import { logout } from "../store/actions/auth.actions";
 import { useDispatch } from "react-redux";
 import { useCallback, useState } from "react";
 

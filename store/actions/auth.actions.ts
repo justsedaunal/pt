@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import { AuthService } from "../../api/services/auth.service";
+import { AuthService } from "../../pages/api/services/auth.service";
 import { AuthReduxModel } from "../models/auth-redux.model";
 
 const _authService = new AuthService();
