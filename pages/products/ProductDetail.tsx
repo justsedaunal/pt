@@ -1,27 +1,20 @@
 import { useRouter } from "next/router";
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import { faHeart as faHeartR } from "@fortawesome/free-regular-svg-icons";
 import { ProductService } from "../api/services/product.service";
+import Image from "next/image";
 
 const ProductDetail = () => {
-  const _productService = new ProductService();
+  
   const imgUrl = "https://assignment-api.piton.com.tr";
   const [product, setProduct] = useState({} as any);
 
-  const { query } = useRouter();
-  useEffect(() => {
-    if (query.id) {
-      GetProductById(parseInt(query.id.toString()));
-    }
-    return () => {
-      setProduct({});
-    };
-  }, [query.id]);
-
-  const GetProductById = (id: number) => {
+  const { query } = useRouter();  
+  const GetProductById = useCallback((id: number) => {
+    const _productService = new ProductService();
     let tokenSession = sessionStorage.getItem("token");
     let tokenLocal = localStorage.getItem("token");
 
@@ -32,7 +25,7 @@ const ProductDetail = () => {
     if (tokenLocal != null) {
       token = tokenLocal;
     }
-    
+
     return _productService
       .getById(id, token)
       .then((res) => {
@@ -42,7 +35,17 @@ const ProductDetail = () => {
       .catch((err) => {
         console.error(err);
       });
-  };
+  }, []);
+  useEffect(() => {
+    if (query.id) {
+      GetProductById(parseInt(query.id.toString()));
+    }
+    return () => {
+      setProduct({});
+    };
+  }, [query.id,GetProductById]);
+
+
 
   return (
     <>
@@ -51,7 +54,7 @@ const ProductDetail = () => {
           <div className="container mt-4">
             <div className="row gap-4 justify-content-center flex-wrap">
               <div className="card col-12 flex-row  card-height">
-                <img
+                <Image
                   src={imgUrl + product.image}
                   className="card-img-top rounded img-width"
                   alt="..."

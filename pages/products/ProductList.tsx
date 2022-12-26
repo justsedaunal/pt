@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import { faHeart as faHeartR } from "@fortawesome/free-regular-svg-icons";
 import { useRouter } from "next/router";
+import Image from "next/image";
 export default function ProductList() {
   const route = useRouter();
   const imgUrl = "https://assignment-api.piton.com.tr";
@@ -13,7 +14,7 @@ export default function ProductList() {
 
   useEffect(() => {
     dispatch(Action());
-  }, []);
+  }, [dispatch]);
 
 
   return (
@@ -22,7 +23,7 @@ export default function ProductList() {
         <div className="row gap-4 justify-content-center flex-wrap">
           {productSelector.products.map((x: any) => (
             <div key={x.id} className="card col-3 ">
-              <img src={imgUrl + x.image} className="card-img-top" alt="..." />
+              <Image src={imgUrl + x.image} className="card-img-top" alt="..." />
               <div className="card-body">
                 <h5 className="card-title">{x.name}</h5>
                 <p className="card-text">{x.price} $</p>

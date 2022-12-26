@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import { RootState } from "./store/root-reducers";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Mainlayout from "./main_layout";
-import { useEffect } from "react";
+import { useCallback, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { SetAuth } from "./store/actions/auth.actions";
 const inter = Inter({ subsets: ["latin"] });
@@ -12,11 +12,7 @@ const inter = Inter({ subsets: ["latin"] });
 export default function Home({ children }: any) {
   const dispatch = useDispatch();
   const authR = useSelector<RootState>((state) => state.authReducer) as any;
-  useEffect(() => {
-    authControl();
-    return () => {};
-  }, [dispatch]);
-  function authControl() {
+  const authControl = useCallback(() => {
     var token = "";
     var fullName = "";
     var localToken = localStorage.getItem("token");
@@ -39,8 +35,12 @@ export default function Home({ children }: any) {
         token: token,
       }) as any
     );
-    
-  }
+  }, [dispatch]);
+  useEffect(() => {
+    authControl();
+    return () => {};
+  }, [authControl]);
+
   return (
     <>
       {authR.auth.token == "" ? <Login /> : <Mainlayout>{children}</Mainlayout>}
