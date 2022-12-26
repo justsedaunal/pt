@@ -57,7 +57,7 @@ const ProductDetail = () => {
                 <Image
                    width={200}  height={500}
                   src={imgUrl + product.image}
-                  className="card-img-top rounded img-width"
+                  className="card-img-top rounded img-width p-4"
                   alt="..."
                 />
                 <div className="card-body d-flex align-items-center flex-column justify-content-center">

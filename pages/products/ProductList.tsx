@@ -23,7 +23,7 @@ export default function ProductList() {
         <div className="row gap-4 justify-content-center flex-wrap">
           {productSelector.products.map((x: any) => (
             <div key={x.id} className="card col-md-3 col-sm-4 ">
-              <Image width={200}  height={500} src={imgUrl + x.image} className="card-img-top" alt="..." />
+              <Image width={200}  height={500} src={imgUrl + x.image} className="card-img-top p-4" alt="..." />
               <div className="card-body">
                 <h5 className="card-title">{x.name}</h5>
                 <p className="card-text">{x.price} $</p>
