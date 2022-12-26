@@ -1,4 +1,3 @@
-import Link from "next/link";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Action, LikeFunc, UnLikeFunc } from "../store/actions/product.actions";
@@ -22,7 +21,7 @@ export default function ProductList() {
       <div className="container-fluid mt-4">
         <div className="row gap-4 justify-content-center flex-wrap">
           {productSelector.products.map((x: any) => (
-            <div className="card col-3 ">
+            <div key={x.id} className="card col-3 ">
               <img src={imgUrl + x.image} className="card-img-top" alt="..." />
               <div className="card-body">
                 <h5 className="card-title">{x.name}</h5>
