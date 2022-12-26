@@ -35,7 +35,7 @@ export default function ProductList() {
                   }}
                   className="btn btn-primary"
                 >
-                  Go Detail {x.id}
+                  Go Detail 
                 </a>
                 <button onClick={()=> x.likes == 0 ? dispatch(LikeFunc(x.id)as any) : dispatch(UnLikeFunc(x.id)as any)} >
                   <FontAwesomeIcon
