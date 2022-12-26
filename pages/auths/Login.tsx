@@ -93,7 +93,7 @@ export default function Login() {
         <>
           <div className="container-fluid  height">
             <div className="row height ">
-              <div className="bg-grad col-7 d-flex flex-column align-items-start justify-content-center">
+              <div className="bg-grad col-7 d-flex flex-column align-items-start justify-content-center padding">
                 <h1 className="text-white">PitonShop</h1>
                 <p className="text-white">The most popular book shop for IT</p>
               </div>
@@ -179,7 +179,7 @@ export default function Login() {
           {" "}
           <div className="container-fluid  height">
             <div className="row height">
-              <div className="bg-grad col-7 d-flex flex-column align-items-start justify-content-center">
+              <div className="bg-grad col-7 d-flex flex-column align-items-start justify-content-center padding">
                 <h1 className="text-white">PitonShop</h1>
                 <p className="text-white">The most popular book shop for IT</p>
               </div>

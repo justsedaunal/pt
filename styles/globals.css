@@ -101,12 +101,7 @@ body {
 
 body {
   color: rbg(--foreground-rgb);
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+
 }
 
 a {
@@ -146,4 +141,16 @@ a {
 
 .bg-btn {
   background-color: #0675e6;
+}
+
+.padding {
+  padding: 6rem !important;;
+}
+
+.card-height {
+  height: 500px!important;
+}
+
+.img-width {
+  width: 300px !important;;
 }

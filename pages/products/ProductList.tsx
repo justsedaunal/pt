@@ -27,21 +27,25 @@ export default function ProductList() {
               <div className="card-body">
                 <h5 className="card-title">{x.name}</h5>
                 <p className="card-text">{x.price} $</p>
+                <div className="d-flex justify-content-between">
+           
                 <a
                   onClick={() => {
                     route.push(`/products/ProductDetail?id=${x.id}`);
                   }}
                   className="btn btn-primary"
                 >
-                  Go somewhere
+                  Go Detail
                 </a>
                 <button onClick={()=> x.likes == 0 ? dispatch(LikeFunc(x.id)as any) : dispatch(UnLikeFunc(x.id)as any)} >
                   <FontAwesomeIcon
                    fontSize={20}
                     color="red"
                     icon={x.likes == 0 ? faHeartR : faHeart}
+             
                   />
                 </button>
+                </div>
               </div>
             </div>
           ))}
