@@ -93,12 +93,12 @@ export default function Login() {
         <>
           <div className="container-fluid  height">
             <div className="row height ">
-              <div className="bg-grad col-7 d-flex flex-column align-items-start justify-content-center padding">
+              <div className="bg-grad col-md-7 d-flex flex-column align-items-start justify-content-center padding">
                 <h1 className="text-white">PitonShop</h1>
                 <p className="text-white">The most popular book shop for IT</p>
               </div>
-              <div className="col-5 d-flex flex-column align-items-center justify-content-center">
-                <div className="padding-text">
+              <div className="col-md-5 d-flex flex-column align-items-center justify-content-center">
+                <div className="w-50">
                   <h2 className="text-dark">Hello!</h2>
                   <p className="text-dark">Sign Up To Get Started</p>
                 </div>
@@ -179,11 +179,11 @@ export default function Login() {
           {" "}
           <div className="container-fluid  height">
             <div className="row height">
-              <div className="bg-grad col-7 d-flex flex-column align-items-start justify-content-center padding">
+              <div className="bg-grad col-md-7 d-flex flex-column align-items-start justify-content-center padding">
                 <h1 className="text-white">PitonShop</h1>
                 <p className="text-white">The most popular book shop for IT</p>
               </div>
-              <div className="col-5 d-flex flex-column align-items-center justify-content-center height">
+              <div className="col-md-5 d-flex flex-column align-items-center justify-content-center height">
                 <form className="w-50" onSubmit={registerForm.handleSubmit}>
                   <div className="mb-3">
                     <label htmlFor="name" className="form-label">
