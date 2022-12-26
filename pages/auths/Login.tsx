@@ -98,7 +98,7 @@ export default function Login() {
                 <p className="text-white">The most popular book shop for IT</p>
               </div>
               <div className="col-5 d-flex flex-column align-items-center justify-content-center">
-                <div>
+                <div className="padding-text">
                   <h2 className="text-dark">Hello!</h2>
                   <p className="text-dark">Sign Up To Get Started</p>
                 </div>
@@ -212,7 +212,7 @@ export default function Login() {
                       type="text"
                       name="name"
                       className="form-control"
-                      placeholder="example"
+                      placeholder="Example"
                       value={registerForm.values.name}
                       onChange={registerForm.handleChange}
                       onBlur={registerForm.handleBlur}

@@ -154,3 +154,7 @@ a {
 .img-width {
   width: 300px !important;;
 }
+
+.padding-text {
+  padding-right: 7rem;
+}

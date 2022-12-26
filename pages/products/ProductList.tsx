@@ -22,7 +22,7 @@ export default function ProductList() {
       <div className="container-fluid mt-4">
         <div className="row gap-4 justify-content-center flex-wrap">
           {productSelector.products.map((x: any) => (
-            <div className="card col-3">
+            <div className="card col-3 ">
               <img src={imgUrl + x.image} className="card-img-top" alt="..." />
               <div className="card-body">
                 <h5 className="card-title">{x.name}</h5>
@@ -35,7 +35,7 @@ export default function ProductList() {
                   }}
                   className="btn btn-primary"
                 >
-                  Go Detail
+                  Go Detail {x.id}
                 </a>
                 <button onClick={()=> x.likes == 0 ? dispatch(LikeFunc(x.id)as any) : dispatch(UnLikeFunc(x.id)as any)} >
                   <FontAwesomeIcon
