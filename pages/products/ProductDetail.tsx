@@ -53,7 +53,7 @@ const ProductDetail = () => {
         <>
           <div className="container mt-4">
             <div className="row gap-4 justify-content-center flex-wrap">
-              <div className="card col-12 flex-md-row flex-column align-items-center">
+              <div className="card col-9 flex-md-row flex-column align-items-center">
                 <Image
                    width={200}  height={500}
                   src={imgUrl + product.image}
