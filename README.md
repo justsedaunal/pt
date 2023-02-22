@@ -1,5 +1,35 @@
 Project link is (https://pt-1lur.vercel.app/)
 
+**Proje Adı:** Ürün Katalog Projesi
+
+**Proje Süresi:** 5 Gün
+
+**Proje Konusu:** Verilen apiye göre sizden 3 sayfa istemekteyiz. Mail ekinde yer alan dosyada bulunan ekran tasarımlarına göre kodlanacaktır. Ekranlar şu şekilde olacaktır:
+
+**Proje API:** https://assignment-api.piton.com.tr/docs/
+
+**Sayfa 1:**
+- [x] Hem giriş yapma hem de kayıt olma formları bu sayfada olacaktır. Bu sayfalarda;
+
+**Giriş yap:**
+- [x] E-mail ile giriş yapılmalıdır ve e-mail validasyonları yapılmalıdır.
+- [x] Şifre 6-20 karakter arası ve alfanumerik olmalıdır. İlgili validasyonlar giriş yap butonuna tıklandığında aktif olmalıdır.
+- [x] Giriş yaparken beni hatırla kısmı ekleyiniz. Bu kısım işaretlendiğinde giriş kısmında alınan token tutulacaktır ve sonraki girişlerde kullanılacaktır.
+
+**Kayıt Olma:**
+- [x] Kullanıcı; ad, soyad, telefon numarası, e-mail adresi ve şifre/şifre tekrar ile kayıt olmalıdır.
+- [x] Telefon Numarası girilirken sadece rakam klavyesi açılmalıdır.
+- [x] Telefon numarası maskeleme işlemi ile alınmalıdır. +90(505) 888-88-88 formatında olmalıdır.
+- [x] Bu ekranda da üstteki validasyon kuralları geçerli olmalıdır.
+- [x] Kayıt olduktan sonra kişi ana sayfaya yönlendirilecektir fakat kullanıcı uygulamaya tekrar giriş yaptığında giriş ekranı ile karşılaşmalıdır.
+
+**Sayfa 2:**
+- [x] Burada apiden çekeceğiniz ürünler listelenmelidir. (Ürünlerin nasıl listeleneceğinin tasarımı tamamen size bırakılmıştır.)
+- [x] Kullanıcı burada ürünleri favorilerine ekleme ve çıkarma işlemlerini yapmalıdır. ▪ Ürün üzerine tıklandığında o ürün ile alakalı detayların göründüğü bir ekrana yönlendirilmelidir.
+
+**Sayfa 3:**
+- [x] Burada önceki sayfada seçilen ürün bilgileri görüntülenecektir. 
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
